@@ -1,13 +1,9 @@
 import React from "react"
-import logo from "./logo.svg"
 import "./App.css"
+import Main from "./Views/Main"
 
 function App() {
-  return (
-    <div>
-      <div></div>
-    </div>
-  )
+  return <Main />
 }
 
 export default App
