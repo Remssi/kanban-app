@@ -1,0 +1,46 @@
+.card-wrapper {
+  width: 300px;
+  max-height: 200px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fcfcfc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card-content {
+  flex-basis: 95%;
+  padding: 0.5em;
+}
+
+.title {
+  font-size: 14px;
+  overflow-wrap: break-word;
+  margin-bottom: 1em;
+}
+
+.body-text {
+  font-size: 14px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.task-color-aside {
+  flex-basis: 5%;
+}
+
+.task-bug {
+  background-color: #ff5959;
+}
+
+.task-feature {
+  background-color: #6459ff;
+}
+
+.task-chore {
+  background-color: #6fff59;
+}
+
+.task-documentation {
+  background-color: #ffee59;
+}
