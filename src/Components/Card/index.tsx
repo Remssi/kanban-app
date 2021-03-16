@@ -1,7 +1,8 @@
 import React from "react"
 import "./card.css"
-import { TaskType } from "../../consts"
+import { DragItemTypes, TaskType } from "../../consts"
 import { setColorByTaskType } from "./setColorByTaskType"
+import { useDrag } from "react-dnd"
 
 interface Props {
   title: string
@@ -10,8 +11,19 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ title, bodyText, taskType }) => {
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: DragItemTypes.Card,
+    collect: monitor => ({
+      isDragging: !!monitor.isDragging()
+    })
+  }))
+
   return (
-    <div className="card-wrapper">
+    <div
+      className="card-wrapper"
+      ref={drag}
+      style={{ display: isDragging ? "none" : "flex" }}
+    >
       <div className="card-content">
         <div className="title">{title}</div>
         <div className="body-text">{bodyText}</div>
