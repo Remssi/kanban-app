@@ -1,18 +1,13 @@
 import React from "react"
-import { Card } from "../../Components"
-import { dummyTasks } from "../../dummyData"
+import "./main.css"
+import CardList from "../../Components/CardList"
 
 const Main: React.FC<any> = ({}) => {
   return (
-    <div>
-      {dummyTasks.map(task => (
-        <Card
-          key={task.id}
-          title={task.title}
-          bodyText={task.bodyText}
-          taskType={task.taskType}
-        />
-      ))}
+    <div className="main">
+      <CardList title="Backlog" />
+      <CardList title="ToDo" />
+      <CardList title="In Progress" />
     </div>
   )
 }
