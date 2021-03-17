@@ -5,13 +5,18 @@ import { setColorByTaskType } from "./setColorByTaskType"
 import { useDrag } from "react-dnd"
 
 interface Props {
+  id: number
   title: string
   bodyText?: string
   taskType: TaskType
 }
 
-const Card: React.FC<Props> = ({ title, bodyText, taskType }) => {
+const Card: React.FC<Props> = ({ id, title, bodyText, taskType }) => {
   const [{ isDragging }, drag] = useDrag(() => ({
+    item: {
+      type: DragItemTypes.Card,
+      id: id
+    },
     type: DragItemTypes.Card,
     collect: monitor => ({
       isDragging: !!monitor.isDragging()
