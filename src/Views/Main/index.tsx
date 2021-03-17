@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import "./main.css"
-import CardList from "../../Components/CardList"
+import { CardList } from "../../Components"
 import { dummyCardLists, dummyTasks } from "../../dummyData"
 import { TaskStatus } from "../../consts"
 
