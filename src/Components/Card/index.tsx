@@ -34,9 +34,7 @@ const Card: React.FC<Props> = ({ id, title, bodyText, taskType }) => {
         <div className="title">{title}</div>
         <div className="body-text">{bodyText}</div>
       </div>
-      <div
-        className={"task-color-aside" + " " + setColorByTaskType(taskType)}
-      />
+      <div className={"task-color-aside " + setColorByTaskType(taskType)} />
     </div>
   )
 }
