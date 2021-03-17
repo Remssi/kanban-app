@@ -12,26 +12,30 @@ export const dummyTasks = [
     title: "A Task",
     bodyText: "Do this task.",
     taskType: TaskType.Bug,
-    status: TaskStatus.Backlog
+    status: TaskStatus.ToDo,
+    cardListIndex: 2
   },
   {
     id: 2,
     title: "A Task",
     bodyText: "Do this task.",
     taskType: TaskType.Feature,
-    status: TaskStatus.ToDo
+    status: TaskStatus.ToDo,
+    cardListIndex: 1
   },
   {
     id: 3,
     title: "A Task",
     bodyText: "Do this task.",
     taskType: TaskType.Chore,
-    status: TaskStatus.ToDo
+    status: TaskStatus.ToDo,
+    cardListIndex: 0
   },
   {
     id: 4,
     title: "A Task",
     taskType: TaskType.Documentation,
-    status: TaskStatus.InProgress
+    status: TaskStatus.InProgress,
+    cardListIndex: 0
   }
 ]

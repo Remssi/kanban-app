@@ -8,6 +8,7 @@ export interface Task {
   bodyText?: string
   taskType: TaskType
   status: TaskStatus
+  cardListIndex: number
 }
 
 export enum TaskType {

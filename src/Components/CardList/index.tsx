@@ -8,7 +8,7 @@ interface Props {
   title: string
   status: TaskStatus
   taskDatas: Array<Task>
-  handleTaskChange: (id: number, status: TaskStatus) => void
+  handleTaskChange: (id: number, status: TaskStatus, lastIndex: number) => void
 }
 
 const CardList: React.FC<Props> = ({
@@ -20,12 +20,12 @@ const CardList: React.FC<Props> = ({
   const [{ isOver }, drop] = useDrop(
     () => ({
       accept: DragItemTypes.Card,
-      drop: (item: Task) => handleTaskChange(item.id, status),
+      drop: (item: Task) => handleTaskChange(item.id, status, taskDatas.length),
       collect: monitor => ({
         isOver: !!monitor.isOver()
       })
     }),
-    []
+    [status, taskDatas.length]
   )
 
   return (

@@ -8,11 +8,16 @@ const Main: React.FC<any> = ({}) => {
   const [cardLists, setCardLists] = useState(dummyCardLists)
   const [tasks, setTasks] = useState(dummyTasks)
 
-  const handleTaskChange = (id: number, status: TaskStatus) => {
+  const handleTaskChange = (
+    id: number,
+    status: TaskStatus,
+    lastIndex: number
+  ) => {
     setTasks(
       tasks.map(task => {
         if (task.id === id) {
           task.status = status
+          task.cardListIndex = lastIndex
         }
         return task
       })
@@ -26,7 +31,12 @@ const Main: React.FC<any> = ({}) => {
           key={cardList.id}
           title={cardList.title}
           status={cardList.status}
-          taskDatas={tasks.filter(task => task.status === cardList.status)}
+          taskDatas={tasks
+            .filter(task => task.status === cardList.status)
+            .sort(
+              (prevTask, nextTask) =>
+                prevTask.cardListIndex - nextTask.cardListIndex
+            )}
           handleTaskChange={handleTaskChange}
         />
       ))}
