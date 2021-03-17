@@ -1,19 +1,26 @@
 import React from "react"
 import "./cardList.css"
-import { dummyTasks } from "../../dummyData"
 import { Card } from ".."
 import { useDrop } from "react-dnd"
-import { DragItemTypes } from "../../consts"
+import { DragItemTypes, Task, TaskStatus } from "../../consts"
 
 interface Props {
   title: string
+  status: TaskStatus
+  taskDatas: Array<Task>
+  handleTaskChange: (id: number, status: TaskStatus) => void
 }
 
-const CardList: React.FC<Props> = ({ title }) => {
+const CardList: React.FC<Props> = ({
+  title,
+  status,
+  taskDatas,
+  handleTaskChange
+}) => {
   const [{ isOver }, drop] = useDrop(
     () => ({
       accept: DragItemTypes.Card,
-      drop: (item, monitor) => console.log(monitor.getItem()),
+      drop: (item: Task) => handleTaskChange(item.id, status),
       collect: monitor => ({
         isOver: !!monitor.isOver()
       })
@@ -28,7 +35,7 @@ const CardList: React.FC<Props> = ({ title }) => {
       ref={drop}
     >
       <div className="title">{title}</div>
-      {dummyTasks.map(task => (
+      {taskDatas.map(task => (
         <Card key={task.id} {...task} />
       ))}
     </div>

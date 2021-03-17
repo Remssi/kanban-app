@@ -9,6 +9,7 @@ interface Props {
   title: string
   bodyText?: string
   taskType: TaskType
+  status: string
 }
 
 const Card: React.FC<Props> = ({ id, title, bodyText, taskType }) => {
