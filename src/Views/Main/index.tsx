@@ -4,8 +4,8 @@ import { CardList } from "../../Components"
 import { dummyCardLists, dummyTasks } from "../../dummyData"
 import { TaskStatus } from "../../consts"
 
-const Main: React.FC<any> = ({}) => {
-  const [cardLists, setCardLists] = useState(dummyCardLists)
+const Main: React.FC<{}> = () => {
+  const [cardLists] = useState(dummyCardLists)
   const [tasks, setTasks] = useState(dummyTasks)
 
   const handleTaskChange = (
