@@ -11,6 +11,12 @@ export interface Task {
   cardListIndex: number
 }
 
+export interface TaskList {
+  id: number
+  title: string
+  status: TaskStatus
+}
+
 export enum TaskType {
   Bug = "bug",
   Feature = "feature",

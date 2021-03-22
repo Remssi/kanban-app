@@ -1,12 +1,12 @@
-import { TaskStatus, TaskType } from "./consts"
+import { Task, TaskList, TaskStatus, TaskType } from "./consts"
 
-export const dummyCardLists = [
+export const dummyCardLists: TaskList[] = [
   { id: 1, title: "Backlog", status: TaskStatus.Backlog },
   { id: 2, title: "ToDo", status: TaskStatus.ToDo },
   { id: 3, title: "In Progress", status: TaskStatus.InProgress }
 ]
 
-export const dummyTasks = [
+export const dummyTasks: Task[] = [
   {
     id: 1,
     title: "A Task",
