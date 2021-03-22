@@ -1,3 +1,26 @@
+# Kanban type application
+
+I started this freetime practice project because I wanted to create something with drag and drop features. I used React and react-dnd libraries.
+
+## Work in progress
+
+### Select any position in task list for the dragged task
+Currently: The cards always go to the bottom of the list, no matter where you drag it.
+
+### Beautiful styles
+Currently: The app has crude placeholder styles.
+
+### Open modal when clicking a task
+
+### Edit task data in the modal
+
+### Extra: Smooth transition of task cards, when dragged card takes their space
+
+### Extra: Simple backend / database implementation to save tasks
+
+## Why css files instead of, say, styled components?
+No reason, just wanted to try and style everything with them to see if I could still keep everything clean and easily readable.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
